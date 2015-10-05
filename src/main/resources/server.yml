@@ -1,0 +1,17 @@
+auth: NULL
+
+configureFromEnvironment: true
+        
+logging:
+    level: INFO
+    loggers:
+        "org.hibernate": INFO 
+        "org.glassfish": ERROR
+        
+assets:
+  - name: northwind
+    uri: /ui
+    path: /ui
+  - name: explorer
+    uri: /explorer
+    path: /workspace-explorer/dist

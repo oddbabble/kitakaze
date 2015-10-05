@@ -1,0 +1,86 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.chiralbehaviors.kitaze</groupId>
+    <artifactId>kitakaze</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>Kitakaze</name>
+    <description>The Ultrastructure/Northwind mashup on Heroku</description>
+
+    <licenses>
+        <license>
+            <name>AGPLv3 License</name>
+            <url>http://www.gnu.org/licenses/</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>Hal Hildebrand</name>
+            <email>hal.hildebrand@me.com</email>
+            <organization>Chiral Behaviors</organization>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>git://github.com/ChiralBehaviors/kitakaze.git</connection>
+        <url>https://github.com/ChiralBehaviors/kitakaze</url>
+    </scm>
+
+
+    <repositories>
+        <repository>
+            <id>chiralbehaviors-release</id>
+            <url>http://repository-chiralbehaviors.forge.cloudbees.com/release/</url>
+        </repository>
+        <repository>
+            <id>chiralbehaviors-snapshots</id>
+            <url>http://repository-chiralbehaviors.forge.cloudbees.com/snapshot/</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.chiralbehaviors.northwind</groupId>
+            <artifactId>northwind-service</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <classifier>phat</classifier>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>2.10</version>
+                <executions>
+                    <execution>
+                        <id>copy</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>copy</goal>
+                        </goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>com.chiralbehaviors.northwind</groupId>
+                                    <artifactId>northwind-service</artifactId>
+                                    <version>0.0.1-SNAPSHOT</version>
+                                    <classifier>phat</classifier>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${project.build.directory}</outputDirectory>
+                                    <destFileName>northwind-service.jar</destFileName>
+                                </artifactItem>
+                            </artifactItems>
+                            <!-- other configurations here -->
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>

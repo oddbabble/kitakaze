@@ -1,0 +1,6 @@
+{
+  "name": "Kitakaze",
+  "description": "An Ultrastructure/Northwind mashup on Heroku",
+  "image": "heroku/java",
+  "addons": [ "heroku-postgresql" ]
+}
