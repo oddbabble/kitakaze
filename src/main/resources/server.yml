@@ -7,15 +7,11 @@ logging:
     loggers:
         "org.hibernate": INFO 
         "org.glassfish": ERROR
+        "org.hibernate.c3p0": ERROR
+        "com.mchange": ERROR
+        
     appenders:
       - type: console
-      - type: papertrail
-        host: papertrail-fluffy-8136.papertrailapp.com
-        port: 22222
-        ident: Kitakaze
-        # timezone: UTC
-        # facility: USER
-        # sendLocalName: true
         
 assets:
   - name: northwind
