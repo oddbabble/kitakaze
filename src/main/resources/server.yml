@@ -20,3 +20,6 @@ assets:
   - name: explorer
     uri: /explorer
     path: /workspace-explorer/dist
+  - name: browser
+    uri: /browser
+    path: /browser
