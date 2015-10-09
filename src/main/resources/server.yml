@@ -6,22 +6,28 @@ logging:
     level: INFO
     loggers:
         "org.hibernate": INFO 
-        "org.glassfish": ERROR
+        "org.glassfish": WARN
         "org.hibernate.c3p0": ERROR
         "com.mchange": ERROR
         
     appenders:
       - type: console
+      
+assetsConfiguration:
+    overrides:
+        /ui: target/classses/ui
+        /: target/classes/explorer
         
 assets:
   - name: explorer
-    uri: /explorer
-    path: /workspace-explorer/dist
-  - name: browser
-    uri: /browser
-    path: /browser
-    
-fileAssets:
+    uri: /
+    path: /explorer
+    index: index.html
   - name: northwind
     uri: /ui
-    path: target/classes/ui
+    path: /ui
+    index: index.html
+    
+server:
+    applicationContextPath: /
+    rootPath: /api/*
