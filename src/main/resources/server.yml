@@ -15,17 +15,12 @@ logging:
       
 assetsConfiguration:
     overrides:
-        /ui: target/classses/ui
-        /: target/classes/explorer
+        /: target/classes/assets
         
 assets:
-  - name: explorer
-    uri: /
-    path: /explorer
-    index: index.html
   - name: northwind
-    uri: /ui
-    path: /ui
+    uri: /
+    path: /assets
     index: index.html
     
 server:
