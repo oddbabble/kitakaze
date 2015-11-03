@@ -1,21 +1,20 @@
 auth: NULL
-
-configureFromEnvironment: true
         
 logging:
-    level: INFO
-    loggers:
-        "org.hibernate": INFO 
-        "org.glassfish": WARN
-        "org.hibernate.c3p0": ERROR
-        "com.mchange": ERROR
+  level: INFO
+  loggers:
+    org.hibernate: INFO 
+    org.glassfish: WARN
+    org.hibernate.c3p0: ERROR
+    com.mchange: ERROR
+    graphql: WARN
         
-    appenders:
-      - type: console
+  appenders:
+    - type: console
       
 assetsConfiguration:
-    overrides:
-        /: target/classes/assets
+  overrides:
+    /: target/classes/assets
         
 assets:
   - name: northwind
@@ -24,5 +23,9 @@ assets:
     index: index.html
     
 server:
-    applicationContextPath: /
-    rootPath: /api/*
+  type: simple
+  adminContextPath: /admin
+  applicationContextPath: /
+  rootPath: /api/*  
+  connector:
+    type: http
