@@ -33,6 +33,12 @@ You will then see the boot sequence of the Ultrastructure instance into the Post
 Note that this will take a lot of time if you're using the free version of Heroku.  The application keeps bumping up against memory limits and 
 it doesn't run all that great on purpose - they want you to upgrade and pay them cash.  But it will eventually finish and when you do, you have an
 initialized Ultrastructure instance.  
+    
+## Bring Your Dyno Back Up
+
+     heroku ps:scale web=1
+
+Your Ultrastructure instance should now be up and available for your use.
 
 ## Loading Northwind
 
@@ -53,10 +59,6 @@ You can load the demo scenario ontology in the same bash process as above by doi
 Finally, you can load the snapshot state of the demo by:
 
     java -jar target/navi.jar load-snap data/demo-data.json
-    
-## Bring Your Dyno Back Up
-
-     heroku ps:scale web=1
     
 ## Browsing the demo
 
