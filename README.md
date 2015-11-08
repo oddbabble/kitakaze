@@ -15,7 +15,9 @@ you should need to do other than the magic:
     git push heroku master
     
 Unfortunately, the actual process we're deploying will fail to come up because the PostgreSQL database has not been 
-initialized as an Ultrastructure instance.
+initialized as an Ultrastructure instance.  First, shutdown the dyno:
+
+     heroku ps:scale web=0
 
 ## Initialization
 
@@ -51,6 +53,10 @@ You can load the demo scenario ontology in the same bash process as above by doi
 Finally, you can load the snapshot state of the demo by:
 
     java -jar target/navi.jar load-snap data/demo-data.json
+    
+## Bring Your Dyno Back Up
+
+     heroku ps:scale web=1
     
 ## Browsing the demo
 
