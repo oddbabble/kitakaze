@@ -3,7 +3,15 @@ The Ultrastructure/Northwind Mashup on Heroku
 
 This project is still a sketch at this point, kind of an end user testing 
 ground wrt [Ultrastructure as a Service](https://github.com/ChiralBehaviors/Ultrastructure/wiki).  Consequently, 
-things may seem a bit more tedious than what I'm ultimately targeting.  
+things may seem a bit more tedious than what I'm ultimately targeting.
+
+## Important Caveat
+
+Please note that the free version of Heroku is severely memory constrained.  Ultrastructure does run within the memory constraints free version, but
+the initialization of Northwind demo do strain the limits of the free version.  It's okay in that it will eventually complete,
+ but Heroku complains about the memory usage and isn't all that happy with it.
+ 
+## Obtain a Heroku Account
 
 First, you'll need to get a [Heroku](http://heroku.com) account.  It's a bit of a thing, but it's free and 
 they do have extensive documentation and a wonderful "hello world" Java application that can teach you
