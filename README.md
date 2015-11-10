@@ -33,40 +33,19 @@ To initialize the Ultrastructure instance, we do (in your local Kitikaze directo
 
     heroku run bash
     
-which will give you a bash shell running remotely on AWS.  In this shell, do:
+which will give you a bash shell running remotely on AWS.  To perform all the initialization steps and load the demo data in your remote shell do:
 
-    java -jar target/navi.jar bootstrap
+    ./init.sh
     
-You will then see the boot sequence of the Ultrastructure instance into the PostgreSQL database for your Heroku application.  
-Note that this will take a lot of time if you're using the free version of Heroku.  The application keeps bumping up against memory limits and 
-it doesn't run all that great on purpose - they want you to upgrade and pay them cash.  But it will eventually finish and when you do, you have an
-initialized Ultrastructure instance.  
+This will bootstrap the Ultrastructure instance, load the northwind and demo scenario workspaces and load the demo data.   
     
 ## Bring Your Dyno Back Up
+
+after you have initialized the Ultrastructre instance, exit your remote bash shell and in your local repository:
 
      heroku ps:scale web=1
 
 Your Ultrastructure instance should now be up and available for your use.
-
-## Loading Northwind
-
-To load the Northwind ontology, in the same bash process as above, do:
-
-    java -jar target/navi.jar load data/northwind.1.json
-    
-This loads the base ontology of the Northwind/Ultrastructure mashup.
-
-## Loading Demo Scenario Ontology
-
-You can load the demo scenario ontology in the same bash process as above by doing:
-
-    java -jar target/navi.jar load data/scenario.1.json
-    
-## Loading Demo Scenario State
-
-Finally, you can load the snapshot state of the demo by:
-
-    java -jar target/navi.jar load-snap data/demo-data.json
     
 ## Browsing the demo
 
@@ -81,3 +60,39 @@ rooted to the base kernel workspace of the Ultrastructure instance.  To see the 
     
 A lot more exciting than the kernel workspace, but the kernel workspace isn't too shabby I must say.  You can use the [GraphiQL IDE](https://github.com/graphql/graphiql)
 to explore the system, much like an application would use the GraphQL api.
+
+## Explanation of Initialization Steps
+
+The init.sh bundles up several steps that can be performed manually.  All commands are designed to execute in the environment where the Ultrastructure 
+PostgreSQL instance is up n' running - whether this is remotely or locally emulated.
+
+
+### Bootstrapping
+  In you shell, do:
+
+    java -jar target/navi.jar bootstrap
+    
+You will then see the boot sequence of the Ultrastructure instance into the PostgreSQL database for your Heroku application.  
+Note that this will take a lot of time if you're using the free version of Heroku.  The application keeps bumping up against memory limits and 
+it doesn't run all that great on purpose - they want you to upgrade and pay them cash.  But it will eventually finish and when you do, you have an
+initialized Ultrastructure instance.  
+
+### Loading Northwind
+
+To load the Northwind ontology, in the same bash process as above, do:
+
+    java -jar target/navi.jar load data/northwind.1.json
+    
+This loads the base ontology of the Northwind/Ultrastructure mashup.
+
+### Loading Demo Scenario Ontology
+
+You can load the demo scenario ontology in the same bash process as above by doing:
+
+    java -jar target/navi.jar load data/scenario.1.json
+    
+### Loading Demo Scenario State
+
+Finally, you can load the snapshot state of the demo by:
+
+    java -jar target/navi.jar load-snap data/demo-data.json
