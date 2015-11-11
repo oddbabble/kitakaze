@@ -8,7 +8,7 @@ things may seem a bit more tedious than what I'm ultimately targeting.
 ## Important Caveat
 
 Please note that the free version of Heroku is severely memory constrained.  Ultrastructure does run within the memory constraints free version, but
-the initialization of Northwind demo do strain the limits of the free version.  It's okay in that it will eventually complete,
+the initialization of Northwind demo does strain the limits of the free version a bit.  It's okay in that it will eventually complete,
  but Heroku complains about the memory usage and isn't all that happy with it.
  
 ## Obtain a Heroku Account
