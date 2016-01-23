@@ -2,18 +2,11 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
 >
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.chiralbehaviors.kitaze</groupId>
-    <artifactId>kitakaze</artifactId>
+    <groupId>com.oddable.kitaze</groupId>
+    <artifactId>oddable</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>Kitakaze</name>
-    <description>The Ultrastructure/Northwind mashup on Heroku</description>
-
-    <licenses>
-        <license>
-            <name>AGPLv3 License</name>
-            <url>http://www.gnu.org/licenses/</url>
-        </license>
-    </licenses>
+    <name>Oddable</name>
+    <description>The OddableUltrastructure instance on Heroku</description>
 
     <developers>
         <developer>
